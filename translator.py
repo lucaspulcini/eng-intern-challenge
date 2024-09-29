@@ -150,7 +150,7 @@ class Translator():
         "Translates and english string into its braille counterpart."
 
         i = 0
-        firstNum = True
+        first_num = True
         translated_str = ''
 
         while i < len(input_str):
@@ -168,15 +168,15 @@ class Translator():
                 translated_str += self.english_to_braille['letters'][character.lower()]
                 
             elif character in self.english_to_braille['numbers']:
-                if firstNum:
+                if first_num:
                     translated_str += '.O.OOO'
-                    firstNum = False               
+                    first_num = False               
                 translated_str += self.english_to_braille['numbers'][character]
 
             elif character in self.english_to_braille['characters']:
                 if character == ' ':
                     translated_str += self.english_to_braille['characters'][character]
-                    firstNum = True
+                    first_num = True
 
                 else:
                     translated_str += self.english_to_braille['characters'][character]
